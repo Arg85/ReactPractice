@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
-import {useState,useEffect} from 'react'
+import logo from "./logo.svg";
+import "./App.css";
+import { useState, useEffect } from "react";
 function App() {
-  const [size,setSize]=useState(window.innerWidth)
+  const [users, setUsers] = useState([]);
+  const fetchUsers = async () => {
+    const response = await fetch("https://api.github.com/users");
+    const Data = await response.json();
+    setUsers(Data);
+  };
   useEffect(() => {
-    console.log("useeffect called")
-    window.addEventListener('resize',()=>{
-      setSize(window.innerWidth)
-    })
-    return () => {
-    console.log("Cleanuo")
-    window.removeEventListener('resize',setSize(window.innerWidth))
-    }
-  })
-  console.log("COmponent Rednered")
+    fetchUsers();
+    return () => {};
+  }, []);
+  console.log("COmponent Rednered");
   return (
-    <div className="App" >
-     <h1>Window size</h1>
-     <h2>{size}</h2>
+    <div className="App">
+      {users.map((user) => {
+        return (
+          <div key={user.id} className="card">
+            <li>
+              <img
+                className="GitImage"
+                src={user.avatar_url}
+                alt={user.type}
+              ></img>
+             
+                <h4>{user.login}</h4>
+                <a href={user.html_url}>Profile</a>
+           
+            </li>
+          </div>
+        );
+      })}
     </div>
   );
 }

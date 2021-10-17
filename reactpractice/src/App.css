@@ -1,12 +1,30 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  padding:5px;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
 }
-
+li,a{list-style-type: none;
+text-decoration: none;}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
+.GitImage{
+  height:150px;
+  width: 150px;
+  border-radius: 50px;
+}
+.card{
+  width: 213px;
+  height: 280px;
+  padding: 10px;
+  border:0.5px solid black;
+  background-color: rgb(225, 221, 221);
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
