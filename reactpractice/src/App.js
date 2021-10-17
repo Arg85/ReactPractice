@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
-
+import {useState,useEffect} from 'react'
 function App() {
+  const [size,setSize]=useState(window.innerWidth)
+  useEffect(() => {
+    console.log("useeffect called")
+    window.addEventListener('resize',()=>{
+      setSize(window.innerWidth)
+    })
+    return () => {
+    console.log("Cleanuo")
+    window.removeEventListener('resize',setSize(window.innerWidth))
+    }
+  })
+  console.log("COmponent Rednered")
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" >
+     <h1>Window size</h1>
+     <h2>{size}</h2>
     </div>
   );
 }
