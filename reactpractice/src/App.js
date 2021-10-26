@@ -4,6 +4,7 @@ import "./App.css";
 // import ShortCircuitEvaluation from "./Components/ShortCircuitEvaluation";
 // import ShowHide from "./Components/ShowHide";
 import ArrayState from "./Components/ArrayState"
+import ListForm from "./Components/ListForm";
 function App() {
  
   console.log("COmponent Rednered");
@@ -13,7 +14,8 @@ function App() {
    
     // <ShortCircuitEvaluation/>
     // <ShowHide/>
-    <ArrayState/>
+    // <ArrayState/>
+    <ListForm/>
     
   );
 }
