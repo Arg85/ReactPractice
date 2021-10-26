@@ -1,9 +1,7 @@
 import React from 'react'
 import {useState,useEffect} from 'react'
 function ShowHide() {
-    const [show, setShow] = useState("fgj")
-  
-
+    const [show, setShow] = useState("")
     return (
         <div>
             <button onClick={()=>{setShow(prev=>!prev)}}>Show/Hide</button>

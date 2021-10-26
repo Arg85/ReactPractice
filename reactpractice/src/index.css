@@ -5,9 +5,26 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:aliceblue ;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.cardDet{
+  border:1px solid black;
+  margin:10px auto;
+  padding: 5px;
+  background-color: white;
+  width:60rem;
+}
+.cardBut{
+  text-align: center;
+  
+}
+.cardBut button{
+  padding: 1em;
+  background-color: blueviolet;
+  color:#ffffff;
 }
