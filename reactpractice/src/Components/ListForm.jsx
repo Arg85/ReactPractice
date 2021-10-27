@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { v4 as uuidv4 } from 'uuid';
 function ListForm() {
     const [peoples, setPeoples] = useState([]);
     const [formVal, setFormVal] = useState({
@@ -12,7 +13,7 @@ function ListForm() {
   const SubmitEvent=(e)=>{
       e.preventDefault()
       console.log("hua")
-      setPeoples([...peoples,{...formVal,id:formVal.Email}])
+      setPeoples([...peoples,{...formVal,id:uuidv4()}])
 
   }
   const setFormValue = (e) => {
