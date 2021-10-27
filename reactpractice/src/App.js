@@ -6,8 +6,6 @@ import "./App.css";
 import ArrayState from "./Components/ArrayState"
 import ListForm from "./Components/ListForm";
 function App() {
- 
-  console.log("COmponent Rednered");
   return (
     // <ComponentEffect/>
     // <ConditonalRendering/>
