@@ -5,6 +5,7 @@ import "./App.css";
 // import ShowHide from "./Components/ShowHide";
 import ArrayState from "./Components/ArrayState"
 import ListForm from "./Components/ListForm";
+import RefsTuto from "./Components/RefsTuto";
 function App() {
   return (
     // <ComponentEffect/>
@@ -13,7 +14,8 @@ function App() {
     // <ShortCircuitEvaluation/>
     // <ShowHide/>
     // <ArrayState/>
-    <ListForm/>
+    // <ListForm/>
+    <RefsTuto/>
     
   );
 }
