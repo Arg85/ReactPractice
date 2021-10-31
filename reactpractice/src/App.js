@@ -6,6 +6,7 @@ import "./App.css";
 import ArrayState from "./Components/ArrayState"
 import ListForm from "./Components/ListForm";
 import RefsTuto from "./Components/RefsTuto";
+import Index from "./Components/useReducer/Index";
 function App() {
   return (
     // <ComponentEffect/>
@@ -15,7 +16,8 @@ function App() {
     // <ShowHide/>
     // <ArrayState/>
     // <ListForm/>
-    <RefsTuto/>
+    // <RefsTuto/>
+    <Index/>
     
   );
 }
