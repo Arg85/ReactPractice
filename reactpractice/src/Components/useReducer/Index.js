@@ -1,6 +1,7 @@
 import React , {useReducer, useState} from 'react'
 import { data } from '../../data'
 import Modal from './Modal'
+import "./Reducer.css"
 import { v4 as uuidv4 } from 'uuid';
 import { reducer } from './Reducers';
 const defaultState={
@@ -27,14 +28,15 @@ const submitHandler=(e)=>{
     }
 }
     return (
-        <div>
-        <h1>Hellow index aahe</h1>
+        <div className="ReducerMain">
             {state.isModalOpen && <Modal closeModal={closeModal} modalContent={state.modalContent}/>}
-            <form onSubmit={(e)=>{submitHandler(e)}}>
+            <form className="ReducerForm" onSubmit={(e)=>{submitHandler(e)}}>
                 <input type="text" value={name} onChange={(e)=>{setName(e.target.value)}}/>
-                <button type="submit">Add</button>
+                <button className="ReducerFormButton btn-accent" type="submit">Add</button>
             </form>
-            {state.peoples.map((people)=>{return <li key={people.id}>{people.name} <button onClick={()=>{dispatch({type:"REMOVE_ITEM",payload:people.id})}}>Remove</button></li>})}
+           <div id="table">
+           {state.peoples.map((people)=>{return <div className="tr" key={people.id}><span className="td"><h2>{people.name}</h2></span> <button className="ReducerFormButton btn-danger td"  onClick={()=>{dispatch({type:"REMOVE_ITEM",payload:people.id})}}>Remove</button></div>})}
+           </div>
         </div>
     )
 }
